@@ -24,7 +24,8 @@ class PavlovaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Row(
+    child: SingleChildScrollView( // Hacer el contenido desplazable
+    child: Row(
         children: [
           Expanded(
             flex: 1,
@@ -124,14 +125,17 @@ class PavlovaScreen extends StatelessWidget {
           ),
           SizedBox(width: 16),
           Expanded(
-            flex: 1,
+            flex: 2,
+            child: ClipRRect(
             child: Image.asset(
               'assets/pavlovaStrawberry.jpg',
               fit: BoxFit.cover,
             ),
           ),
+        ),
         ],
       ),
+    ),
     );
   }
 }
